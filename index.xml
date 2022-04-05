@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>貓咪的梳妝台</title>
+        <link>https://mikucat0309.github.io/</link>
+        <description>Recent content on 貓咪的梳妝台</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Tue, 22 Feb 2022 00:10:55 +0800</lastBuildDate><atom:link href="https://mikucat0309.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>在 Proxmox VE LXC 運行 Kubernetes 節點</title>
+        <link>https://mikucat0309.github.io/article/k8s_in_lxc/</link>
+        <pubDate>Tue, 22 Feb 2022 00:10:55 +0800</pubDate>
+        
+        <guid>https://mikucat0309.github.io/article/k8s_in_lxc/</guid>
+        <description>&lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;HP 8200 Elite (Core i7-2600 / DDR3 16 GB)&lt;/li&gt;
+&lt;li&gt;Proxmox VE 7.1-10&lt;/li&gt;
+&lt;li&gt;Debian 11 LXC from &lt;a class=&#34;link&#34; href=&#34;https://jenkins.linuxcontainers.org/view/Images/job/image-debian/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;linuxcontainers.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;k0s v1.23.3+k0s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;pve-設定&#34;&gt;PVE 設定&lt;/h2&gt;
+&lt;p&gt;確認必要核心模組，已啟用會輸出 1&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /proc/sys/net/bridge/bridge-nf-call-iptables
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;禁用 swap&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sysctl vm.swappiness&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;swapoff -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;開啟 IP 轉送&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;net.ipv4.ip_forward=1&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sysctl --system
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;lxc-設定&#34;&gt;LXC 設定&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;創建 LXC 並取消勾選 &lt;code&gt;Unprivileged container&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;開啟 PVE shell&lt;/li&gt;
+&lt;li&gt;編輯 &lt;code&gt;/etc/pve/lxc/&amp;lt;ID&amp;gt;.conf&lt;/code&gt; ， &lt;code&gt;&amp;lt;ID&amp;gt;&lt;/code&gt; 替換成 LXC 編號&lt;/li&gt;
+&lt;li&gt;將以下設定貼在 LXC 設定檔&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;lxc.apparmor.profile: unconfined
+lxc.cgroup.devices.allow: a
+lxc.cap.drop:
+lxc.mount.auto: &amp;#34;proc:rw sys:rw&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;存檔並啟動 LXC&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;修復-kubernetes-devkmsg-no-such-file-or-directory-錯誤&#34;&gt;修復 Kubernetes &lt;code&gt;/dev/kmsg: no such file or directory&lt;/code&gt; 錯誤&lt;/h2&gt;
+&lt;p&gt;在 LXC 裡執行以下指令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat &amp;gt;/etc/init.d/fix-kmsg &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;&amp;lt;EOF
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ln -s /dev/console /dev/kmsg
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;755&lt;/span&gt; /etc/init.d/fix-kmsg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/etc/init.d/fix-kmsg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接著就可以正常在 LXC 安裝 Kubernetes 了！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
