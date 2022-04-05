@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>貓咪的梳妝台</title>
-        <link>https://mikucat0309.github.io/</link>
+        <link>https://blog.mikuc.at/</link>
         <description>Recent content on 貓咪的梳妝台</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Tue, 22 Feb 2022 00:10:55 +0800</lastBuildDate><atom:link href="https://mikucat0309.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 22 Feb 2022 00:10:55 +0800</lastBuildDate><atom:link href="https://blog.mikuc.at/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在 Proxmox VE LXC 運行 Kubernetes 節點</title>
-        <link>https://mikucat0309.github.io/article/k8s_in_lxc/</link>
+        <link>https://blog.mikuc.at/article/k8s_in_lxc/</link>
         <pubDate>Tue, 22 Feb 2022 00:10:55 +0800</pubDate>
         
-        <guid>https://mikucat0309.github.io/article/k8s_in_lxc/</guid>
+        <guid>https://blog.mikuc.at/article/k8s_in_lxc/</guid>
         <description>&lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;HP 8200 Elite (Core i7-2600 / DDR3 16 GB)&lt;/li&gt;

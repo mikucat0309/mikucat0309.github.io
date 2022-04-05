@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mikucat0309.github.io/en/categories/</loc>
+    <loc>https://blog.mikuc.at/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="https://mikucat0309.github.io/categories/"
+                href="https://blog.mikuc.at/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://mikucat0309.github.io/en/categories/"
+                href="https://blog.mikuc.at/en/categories/"
                 />
   </url><url>
-    <loc>https://mikucat0309.github.io/en/</loc>
+    <loc>https://blog.mikuc.at/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="https://mikucat0309.github.io/"
+                href="https://blog.mikuc.at/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://mikucat0309.github.io/en/"
+                href="https://blog.mikuc.at/en/"
                 />
   </url><url>
-    <loc>https://mikucat0309.github.io/en/tags/</loc>
+    <loc>https://blog.mikuc.at/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="https://mikucat0309.github.io/tags/"
+                href="https://blog.mikuc.at/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://mikucat0309.github.io/en/tags/"
+                href="https://blog.mikuc.at/en/tags/"
                 />
   </url>
 </urlset>
