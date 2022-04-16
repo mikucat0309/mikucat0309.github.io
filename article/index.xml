@@ -1,12 +1,128 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Articles on Mikucat&#39;s Vanity</title>
+        <title>Articles on 貓咪的梳妝台</title>
         <link>https://blog.mikuc.at/article/</link>
-        <description>Recent content in Articles on Mikucat&#39;s Vanity</description>
+        <description>Recent content in Articles on 貓咪的梳妝台</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Tue, 22 Feb 2022 00:10:55 +0800</lastBuildDate><atom:link href="https://blog.mikuc.at/article/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Apr 2022 22:50:00 +0800</lastBuildDate><atom:link href="https://blog.mikuc.at/article/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Awesome Open Source Kubernetes Distribution &amp; OS</title>
+        <link>https://blog.mikuc.at/article/awesome-k8s-distro-os/</link>
+        <pubDate>Fri, 15 Apr 2022 22:50:00 +0800</pubDate>
+        
+        <guid>https://blog.mikuc.at/article/awesome-k8s-distro-os/</guid>
+        <description>&lt;h1 id=&#34;awesome-open-source-kubernetes-distribution--os&#34;&gt;Awesome Open Source Kubernetes Distribution &amp;amp; OS&lt;/h1&gt;
+&lt;h2 id=&#34;distributions&#34;&gt;Distributions&lt;/h2&gt;
+&lt;h3 id=&#34;k3shttpsgithubcomk3s-iok3s&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/k3s-io/k3s&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;K3s&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: CNCF&lt;/li&gt;
+&lt;li&gt;tags: lightweight, single-package&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;An great out-of-the-box distro suitable for home lab or IoT.&lt;/p&gt;
+&lt;p&gt;Strip all functions that can be done through plugins,
+pre-installed klipper load balancer, traefik ingress controller.&lt;/p&gt;
+&lt;h3 id=&#34;k0shttpsgithubcomk0sprojectk0s&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/k0sproject/k0s&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;K0s&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: Mirantis&lt;/li&gt;
+&lt;li&gt;tags: lightweight, single-package&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Another great out-of-the-box distro suitable for home lab or IoT.
+Both K3s and K0s target on lightweight distribution,
+but K0s preserved upstream cloud supports like GCP, AWS and Azure,
+and it doesn&amp;rsquo;t pre-install load balancer and ingress controller.&lt;/p&gt;
+&lt;h3 id=&#34;microk8shttpsgithubcomcanonicalmicrok8s&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/canonical/microk8s&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MicroK8s&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: Canonical&lt;/li&gt;
+&lt;li&gt;tags: lightweight, single-package&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;typhoonhttpsgithubcomposeidontyphoon&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/poseidon/typhoon&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Typhoon&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: Poseidon Labs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vclusterhttpsgithubcomloft-shvcluster&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/loft-sh/vcluster&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;vcluster&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: Loft Labs&lt;/li&gt;
+&lt;li&gt;tags: virtual, multi-cluster, testing, in-namespace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;rancherhttpsgithubcomrancherrancher&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/rancher/rancher&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Rancher&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: Rancher Labs&lt;/li&gt;
+&lt;li&gt;tags: hybird-cloud&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;rke2httpsgithubcomrancherrke2&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/rancher/rke2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RKE2&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: Rancher Labs&lt;/li&gt;
+&lt;li&gt;tags: security, government-compliance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;deckhousehttpsgithubcomdeckhousedeckhouse&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/deckhouse/deckhouse&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Deckhouse&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: Flant&lt;/li&gt;
+&lt;li&gt;tags: user-friendly, enterprise&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;kubecubehttpsgithubcomkubecube-iokubecube&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/kubecube-io/KubeCube&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KubeCube&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: KubeCube Authors&lt;/li&gt;
+&lt;li&gt;tags: multi-cluster, user-friendly, enterprise&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;kubespherehttpsgithubcomkubespherekubesphere&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/kubesphere/kubesphere&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KubeSphere&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: CNCF&lt;/li&gt;
+&lt;li&gt;tags: multi-cluster, user-friendly, enterprise&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tanzu-community-editionhttpsgithubcomvmware-tanzucommunity-edition&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/vmware-tanzu/community-edition&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Tanzu Community Edition&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: VMware&lt;/li&gt;
+&lt;li&gt;tags: user-friendly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;metalk8shttpsgithubcomscalitymetalk8s&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/scality/metalk8s&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MetalK8s&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: Scality&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;kubernetes-fury-distribution-kfdhttpsgithubcomsighupiofury-distribution&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/sighupio/fury-distribution&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Kubernetes Fury Distribution (KFD)&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: SIGHUP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;charmed-kuberneteshttpsgithubcomcharmed-kubernetesbundle&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/charmed-kubernetes/bundle&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Charmed Kubernetes&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;maintainer: Canonical&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;optimized-operating-system&#34;&gt;Optimized Operating System&lt;/h2&gt;
+&lt;h3 id=&#34;taloshttpsgithubcomsiderolabstalos&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/siderolabs/talos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Talos&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Using gRPC to control operating system, that says, no interactive shell.
+Root filesystem is a immutable image, and upgrade through A/B upgrade.&lt;/p&gt;
+&lt;h3 id=&#34;flatcar-linuxhttpsgithubcomflatcar-linuxflatcar&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/flatcar-linux/Flatcar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Flatcar Linux&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://creativecommons.org/publicdomain/zero/1.0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CC0&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>在 Proxmox VE LXC 運行 Kubernetes 節點</title>
         <link>https://blog.mikuc.at/article/k8s_in_lxc/</link>
         <pubDate>Tue, 22 Feb 2022 00:10:55 +0800</pubDate>
